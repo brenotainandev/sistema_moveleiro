@@ -1,5 +1,6 @@
 package br.edu.ifba.sistema_moveleiro.servico;
 
+import br.edu.ifba.sistema_moveleiro.builder.ProdutoBuilder;
 import br.edu.ifba.sistema_moveleiro.entidade.Produto;
 import br.edu.ifba.sistema_moveleiro.repositorio.ProdutoRepository;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,15 @@ public class ProdutoService {
     }
 
     public Produto save(Produto produto) {
-        return repository.save(produto);
+        Produto novoProduto = new ProdutoBuilder()
+                .comCodigo(produto.getProductCode())
+                .comNome(produto.getProductName())
+                .comDescricao(produto.getProductDescription())
+                .comCor(produto.getProductColor())
+                .comPreco(produto.getProductPrice())
+                .build();
+
+        return repository.save(novoProduto);
     }
 
     public List<Produto> findAll() {

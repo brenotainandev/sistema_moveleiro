@@ -15,13 +15,28 @@ public class EstoqueController {
         this.service = service;
     }
 
+    @PostMapping
+    public Estoque create(@RequestBody Estoque estoque) {
+        return service.save(estoque);
+    }
+
     @GetMapping
     public List<Estoque> getAll() {
         return service.findAll();
     }
 
-    @PostMapping
-    public Estoque create(@RequestBody Estoque estoque) {
-        return service.save(estoque);
+    @GetMapping("/{id}")
+    public Estoque getById(@PathVariable Long id) {
+        return service.findById(id);
+    }
+
+    @PutMapping("/{id}")
+    public Estoque update(@PathVariable Long id, @RequestBody Estoque estoque) {
+        return service.update(id, estoque);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        service.deleteById(id);
     }
 }
