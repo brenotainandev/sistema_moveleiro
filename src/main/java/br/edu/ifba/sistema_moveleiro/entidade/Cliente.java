@@ -12,13 +12,13 @@ public class Cliente {
     private Long id;
 
     @Column(name = "customer_name", nullable = false)
-    private String nome;
+    private String customerName;
 
     @Column(name = "cpf", nullable = false)
     private String cpf;
 
     @Column(name = "phone", nullable = false)
-    private String telefone;
+    private String phone;
 
     @Column(name = "email", nullable = false)
     private String email;
@@ -27,28 +27,28 @@ public class Cliente {
     private String cep;
 
     @Column(name = "street", nullable = false)
-    private String rua;
+    private String street;
 
     @Column(name = "house_number", nullable = false)
-    private String numeroCasa;
+    private String houseNumber;
 
     @Column(name = "complement", nullable = false)
-    private String complemento;
+    private String complement;
 
     @Column(name = "district", nullable = false)
-    private String bairro;
+    private String district;
 
     @Column(name = "state", nullable = false)
-    private String estado;
+    private String state;
 
     @Column(name = "city", nullable = false)
-    private String cidade;
+    private String city;
 
-    @Column(name = "created_at")
-    private LocalDateTime criadoEm = LocalDateTime.now();
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    @Column(name = "updated_at")
-    private LocalDateTime atualizadoEm = LocalDateTime.now();
+    @Column(name = "updated_at", nullable = false)
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
     public Long getId() {
         return id;
@@ -58,12 +58,12 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public String getCpf() {
@@ -74,12 +74,12 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -98,67 +98,67 @@ public class Cliente {
         this.cep = cep;
     }
 
-    public String getRua() {
-        return rua;
+    public String getStreet() {
+        return street;
     }
 
-    public void setRua(String rua) {
-        this.rua = rua;
+    public void setStreet(String street) {
+        this.street = street;
     }
 
-    public String getNumeroCasa() {
-        return numeroCasa;
+    public String getHouseNumber() {
+        return houseNumber;
     }
 
-    public void setNumeroCasa(String numeroCasa) {
-        this.numeroCasa = numeroCasa;
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 
-    public String getComplemento() {
-        return complemento;
+    public String getComplement() {
+        return complement;
     }
 
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
+    public void setComplement(String complement) {
+        this.complement = complement;
     }
 
-    public String getBairro() {
-        return bairro;
+    public String getDistrict() {
+        return district;
     }
 
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
+    public void setDistrict(String district) {
+        this.district = district;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getState() {
+        return state;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setState(String state) {
+        this.state = state;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getCity() {
+        return city;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public LocalDateTime getCriadoEm() {
-        return criadoEm;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCriadoEm(LocalDateTime criadoEm) {
-        this.criadoEm = criadoEm;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public LocalDateTime getAtualizadoEm() {
-        return atualizadoEm;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setAtualizadoEm(LocalDateTime atualizadoEm) {
-        this.atualizadoEm = atualizadoEm;
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
