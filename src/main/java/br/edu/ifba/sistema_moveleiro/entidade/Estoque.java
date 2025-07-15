@@ -5,24 +5,24 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "estoque")
+@Table(name = "stocks")
 public class Estoque {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "produto_id")
+    @JoinColumn(name = "product_id")
     private Produto produto;
 
-    @Column(name = "quantidade_produto", nullable = false)
-    private Integer quantidadeProduto;
+    @Column(name = "product_quantity", nullable = false)
+    private Integer productQuantity;
 
-    @Column(name = "criado_em")
-    private LocalDateTime criadoEm = LocalDateTime.now();
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    @Column(name = "atualizado_em")
-    private LocalDateTime atualizadoEm = LocalDateTime.now();
+    @Column(name = "updated_at", nullable = false)
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
     public Long getId() {
         return id;
@@ -40,27 +40,27 @@ public class Estoque {
         this.produto = produto;
     }
 
-    public Integer getQuantidadeProduto() {
-        return quantidadeProduto;
+    public Integer getProductQuantity() {
+        return productQuantity;
     }
 
-    public void setQuantidadeProduto(Integer quantidadeProduto) {
-        this.quantidadeProduto = quantidadeProduto;
+    public void setProductQuantity(Integer productQuantity) {
+        this.productQuantity = productQuantity;
     }
 
-    public LocalDateTime getCriadoEm() {
-        return criadoEm;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCriadoEm(LocalDateTime criadoEm) {
-        this.criadoEm = criadoEm;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public LocalDateTime getAtualizadoEm() {
-        return atualizadoEm;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setAtualizadoEm(LocalDateTime atualizadoEm) {
-        this.atualizadoEm = atualizadoEm;
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

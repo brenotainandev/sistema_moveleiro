@@ -5,19 +5,19 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "customers")
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome_cliente", nullable = false)
+    @Column(name = "customer_name", nullable = false)
     private String nome;
 
     @Column(name = "cpf", nullable = false)
     private String cpf;
 
-    @Column(name = "telefone", nullable = false)
+    @Column(name = "phone", nullable = false)
     private String telefone;
 
     @Column(name = "email", nullable = false)
@@ -26,28 +26,28 @@ public class Cliente {
     @Column(name = "cep", nullable = false)
     private String cep;
 
-    @Column(name = "rua", nullable = false)
+    @Column(name = "street", nullable = false)
     private String rua;
 
-    @Column(name = "numero_casa", nullable = false)
+    @Column(name = "house_number", nullable = false)
     private String numeroCasa;
 
-    @Column(name = "complemento", nullable = false)
+    @Column(name = "complement", nullable = false)
     private String complemento;
 
-    @Column(name = "bairro", nullable = false)
+    @Column(name = "district", nullable = false)
     private String bairro;
 
-    @Column(name = "estado", nullable = false)
+    @Column(name = "state", nullable = false)
     private String estado;
 
-    @Column(name = "cidade", nullable = false)
+    @Column(name = "city", nullable = false)
     private String cidade;
 
-    @Column(name = "criado_em")
+    @Column(name = "created_at")
     private LocalDateTime criadoEm = LocalDateTime.now();
 
-    @Column(name = "atualizado_em")
+    @Column(name = "updated_at")
     private LocalDateTime atualizadoEm = LocalDateTime.now();
 
     public Long getId() {

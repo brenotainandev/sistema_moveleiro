@@ -5,32 +5,32 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "produto")
+@Table(name = "products")
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "codigo_produto", nullable = false)
-    private Integer codigoProduto;
+    @Column(name = "product_code", nullable = false)
+    private Integer productCode;
 
-    @Column(name = "nome_produto", nullable = false)
-    private String nomeProduto;
+    @Column(name = "product_name", nullable = false)
+    private String productName;
 
-    @Column(name = "descricao_produto", nullable = false, length = 1000)
-    private String descricaoProduto;
+    @Column(name = "product_description", nullable = false, length = 1000)
+    private String productDescription;
 
-    @Column(name = "cor_produto", nullable = false)
-    private String corProduto;
+    @Column(name = "product_color", nullable = false)
+    private String productColor;
 
-    @Column(name = "preco_produto", nullable = false)
-    private Double precoProduto;
+    @Column(name = "product_price", nullable = false)
+    private Double productPrice;
 
-    @Column(name = "criado_em")
-    private LocalDateTime criadoEm = LocalDateTime.now();
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    @Column(name = "atualizadoEm")
-    private LocalDateTime atualizado_em = LocalDateTime.now();
+    @Column(name = "updated_at", nullable = false)
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
     public Long getId() {
         return id;
@@ -40,59 +40,59 @@ public class Produto {
         this.id = id;
     }
 
-    public Integer getCodigoProduto() {
-        return codigoProduto;
+    public Integer getProductCode() {
+        return productCode;
     }
 
-    public void setCodigoProduto(Integer codigoProduto) {
-        this.codigoProduto = codigoProduto;
+    public void setProductCode(Integer productCode) {
+        this.productCode = productCode;
     }
 
-    public String getNomeProduto() {
-        return nomeProduto;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setNomeProduto(String nomeProduto) {
-        this.nomeProduto = nomeProduto;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getDescricaoProduto() {
-        return descricaoProduto;
+    public String getProductDescription() {
+        return productDescription;
     }
 
-    public void setDescricaoProduto(String descricaoProduto) {
-        this.descricaoProduto = descricaoProduto;
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
-    public String getCorProduto() {
-        return corProduto;
+    public String getProductColor() {
+        return productColor;
     }
 
-    public void setCorProduto(String corProduto) {
-        this.corProduto = corProduto;
+    public void setProductColor(String productColor) {
+        this.productColor = productColor;
     }
 
-    public Double getPrecoProduto() {
-        return precoProduto;
+    public Double getProductPrice() {
+        return productPrice;
     }
 
-    public void setPrecoProduto(Double precoProduto) {
-        this.precoProduto = precoProduto;
+    public void setProductPrice(Double productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public LocalDateTime getCriadoEm() {
-        return criadoEm;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCriadoEm(LocalDateTime criadoEm) {
-        this.criadoEm = criadoEm;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public LocalDateTime getAtualizado_em() {
-        return atualizado_em;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setAtualizado_em(LocalDateTime atualizado_em) {
-        this.atualizado_em = atualizado_em;
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
