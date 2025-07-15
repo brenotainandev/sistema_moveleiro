@@ -14,11 +14,31 @@ public class ProdutoService {
         this.repository = repository;
     }
 
+    public Produto save(Produto produto) {
+        return repository.save(produto);
+    }
+
     public List<Produto> findAll() {
         return repository.findAll();
     }
 
-    public Produto save(Produto produto) {
+    public Produto findById(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado com ID: " + id));
+    }
+
+    public Produto update(Long id, Produto produto) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Produto não encontrado com ID: " + id);
+        }
+        produto.setId(id);
         return repository.save(produto);
+    }
+
+    public void deleteById(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Produto não encontrado com ID: " + id);
+        }
+        repository.deleteById(id);
     }
 }

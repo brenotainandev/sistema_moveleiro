@@ -15,13 +15,29 @@ public class ProdutoController {
         this.service = service;
     }
 
+    @PostMapping
+    public Produto create(@RequestBody Produto produto) {
+        return service.save(produto);
+    }
+
     @GetMapping
     public List<Produto> getAll() {
         return service.findAll();
     }
 
-    @PostMapping
-    public Produto create(@RequestBody Produto produto) {
-        return service.save(produto);
+    @GetMapping("/{id}")
+    public Produto getById(@PathVariable Long id) {
+        return service.findById(id);
     }
+
+    @PutMapping("/{id}")
+    public Produto update(@PathVariable Long id, @RequestBody Produto produto) {
+        return service.update(id, produto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        service.deleteById(id);
+    }
+
 }
