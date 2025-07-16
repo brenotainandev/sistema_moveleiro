@@ -3,6 +3,9 @@ package br.edu.ifba.sistema_moveleiro.servico;
 import br.edu.ifba.sistema_moveleiro.builder.ProdutoBuilder;
 import br.edu.ifba.sistema_moveleiro.entidade.Produto;
 import br.edu.ifba.sistema_moveleiro.repositorio.ProdutoRepository;
+import br.edu.ifba.sistema_moveleiro.strategy.CalculadoraDePreco;
+import br.edu.ifba.sistema_moveleiro.strategy.DescontoBlackFriday;
+import br.edu.ifba.sistema_moveleiro.strategy.DescontoStrategy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,12 +19,15 @@ public class ProdutoService {
     }
 
     public Produto save(Produto produto) {
+        DescontoStrategy descontoStrategy = new DescontoBlackFriday();
+        CalculadoraDePreco calculadora = new CalculadoraDePreco();
+        double precoComDesconto = calculadora.aplicarDesconto(produto.getProductPrice(), descontoStrategy);
         Produto novoProduto = new ProdutoBuilder()
                 .comCodigo(produto.getProductCode())
                 .comNome(produto.getProductName())
                 .comDescricao(produto.getProductDescription())
                 .comCor(produto.getProductColor())
-                .comPreco(produto.getProductPrice())
+                .comPreco(precoComDesconto)
                 .build();
 
         return repository.save(novoProduto);
