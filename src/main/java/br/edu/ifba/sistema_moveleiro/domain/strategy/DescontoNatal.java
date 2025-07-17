@@ -1,4 +1,4 @@
-package br.edu.ifba.sistema_moveleiro.strategy;
+package br.edu.ifba.sistema_moveleiro.domain.strategy;
 
 public class DescontoNatal implements DescontoStrategy {
     @Override

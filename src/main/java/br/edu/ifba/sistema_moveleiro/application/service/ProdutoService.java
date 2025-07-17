@@ -1,11 +1,11 @@
-package br.edu.ifba.sistema_moveleiro.servico;
+package br.edu.ifba.sistema_moveleiro.application.service;
 
-import br.edu.ifba.sistema_moveleiro.builder.ProdutoBuilder;
-import br.edu.ifba.sistema_moveleiro.entidade.Produto;
-import br.edu.ifba.sistema_moveleiro.repositorio.ProdutoRepository;
-import br.edu.ifba.sistema_moveleiro.strategy.CalculadoraDePreco;
-import br.edu.ifba.sistema_moveleiro.strategy.DescontoBlackFriday;
-import br.edu.ifba.sistema_moveleiro.strategy.DescontoStrategy;
+import br.edu.ifba.sistema_moveleiro.domain.model.produto.builder.ProdutoBuilder;
+import br.edu.ifba.sistema_moveleiro.domain.model.produto.Produto;
+import br.edu.ifba.sistema_moveleiro.infrastructure.repository.ProdutoRepository;
+import br.edu.ifba.sistema_moveleiro.domain.service.CalculadoraDePreco;
+import br.edu.ifba.sistema_moveleiro.domain.strategy.DescontoBlackFriday;
+import br.edu.ifba.sistema_moveleiro.domain.strategy.DescontoStrategy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

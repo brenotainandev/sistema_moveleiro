@@ -1,6 +1,6 @@
-package br.edu.ifba.sistema_moveleiro.builder;
+package br.edu.ifba.sistema_moveleiro.domain.model.produto.builder;
 
-import br.edu.ifba.sistema_moveleiro.entidade.Produto;
+import br.edu.ifba.sistema_moveleiro.domain.model.produto.Produto;
 
 import java.time.LocalDateTime;
 

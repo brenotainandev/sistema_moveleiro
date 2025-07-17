@@ -1,4 +1,4 @@
-package br.edu.ifba.sistema_moveleiro.entidade;
+package br.edu.ifba.sistema_moveleiro.domain.model.produto;
 
 import jakarta.persistence.*;
 

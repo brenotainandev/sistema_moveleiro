@@ -1,7 +1,7 @@
-package br.edu.ifba.sistema_moveleiro.controlador;
+package br.edu.ifba.sistema_moveleiro.api.controller;
 
-import br.edu.ifba.sistema_moveleiro.entidade.Produto;
-import br.edu.ifba.sistema_moveleiro.servico.ProdutoService;
+import br.edu.ifba.sistema_moveleiro.domain.model.produto.Produto;
+import br.edu.ifba.sistema_moveleiro.application.service.ProdutoService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
